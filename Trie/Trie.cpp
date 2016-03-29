@@ -10,15 +10,19 @@
 
 Trie::Trie() {
 	// TODO Auto-generated constructor stub
-	this->base = new long[65535];
-	memset(base, 0, 65535*sizeof(long));
 
-	this->check = new long[65535];
-	memset(check, 0, 65535*sizeof(long));
+	this->trie_size = 65535;
+	this->base = new long[trie_size];
+	memset(base, 0, trie_size*sizeof(long));
 
+	this->check = new long[trie_size];
+	memset(check, 0, trie_size*sizeof(long));
 }
 
 Trie::~Trie() {
 	// TODO Auto-generated destructor stub
 }
 
+long Trie::getSize() {
+	return trie_size;
+}

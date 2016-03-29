@@ -13,9 +13,12 @@ public:
 	Trie();
 	~Trie();
 
+	long getSize();
+
 private:
 	long* base; // base数组
 	long* check; // check数组
+	long trie_size; // base数组的大小
 };
 
 #endif /* TRIE_TRIE_H_ */

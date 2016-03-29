@@ -14,6 +14,11 @@
 
 using namespace std;
 
+struct Character_List {
+	long encode;
+	Character_List* next;
+};
+
 class Dictionary {
 public:
 	Dictionary();
@@ -22,9 +27,17 @@ public:
 	bool InitDictionary(string path);
 
 private:
-	bool ReadDictionary(string path);
+	bool InitDictionary(string path);
 
 	int getCharacterLen(character c);
+
+	void BuildDictionary(ST_Dictionary* dic);
+
+	void BuildTrie(ST_Dictionary* dic);
+
+	void BuildTrieNode(Character_List* list);
+
+	bool isExist(long encode, Character_List* p);
 
 private:
 	Trie* trie;
